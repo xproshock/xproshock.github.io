@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Skript Parser</title>
+  <title>The Code Game</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -13,10 +13,10 @@
     }
 
     textarea {
-      width: 100%;
-      height: 200px;
+      width: 75%;
+      height: 100px;
       font-family: monospace;
-      font-size: 14px;
+      font-size: 40px;
     }
 
     button {
@@ -64,10 +64,10 @@
 
 <body>
 
-  <h2>Meggy-mode's Skript Parser</h2>
-  <textarea id="skriptInput" placeholder="Enter your Skript code here..."></textarea>
+  <h2>Code Parser</h2>
+  <textarea id="codeInput" placeholder="Enter Your Code Here"></textarea>
   <br>
-  <button onclick="validateSkript()">Validate</button>
+  <button onclick="isCode()">Enter Code</button>
   <div id="result"></div>
 
   <script>
@@ -178,16 +178,16 @@
       }
     }
 
-    function validateSkript() {
-      const input = document.getElementById("skriptInput").value;
-      const validator = new SkriptValidator();
+    function isCode() {
+      const input = document.getElementById("codeInput").value;
+      const validator = new isCode();
       const errors = validator.validate(input);
 
       const resultDiv = document.getElementById("result");
       resultDiv.innerHTML = "";
 
       if (errors.length === 0) {
-        resultDiv.innerHTML = "<div class='success'>✅ No syntax errors found!</div>";
+        resultDiv.innerHTML = "<div class='success'>4aeife1</div>";
       } else {
         errors.forEach(err => {
           const box = document.createElement("div");
