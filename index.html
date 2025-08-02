@@ -5,8 +5,10 @@
 </head>
 <body>
     <h1>Input Form</h1>
-    <script>
-        window.location.href = "/templates/form.html";
-    </script>
+    <form action="/submit" method="POST">
+        <label for="user_input">Enter something:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
