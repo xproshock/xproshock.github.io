@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Simple Pong Game</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Simple Pong Game</h1>
-  <canvas id="pong" width="800" height="400"></canvas>
-  <script src="game.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      * { font-family: 'Inter', system-ui, sans-serif; }
+      code, .mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-white antialiased">
+    <div id="app" class="min-h-screen flex items-center justify-center p-6">
+      <div class="w-full max-w-2xl">
+        <!-- Card -->
+        <div class="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+          <!-- Header -->
+          <div class="px-8 py-6 border-b border-slate-800 bg-slate-900/50">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center font-bold text-sm">
+                TS
+              </div>
+              <div>
+                <h1 class="font-semibold">TypeScript Playground</h1>
+                <p class="text-sm text-slate-400">Type-safe code in action</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Content -->
+          <div class="p-8">
+            <!-- Type Preview -->
+            <div class="mb-6 p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+              <p class="text-xs text-slate-500 uppercase tracking-wider mb-3">Interface Preview</p>
+              <pre class="mono text-sm text-blue-300"><code>interface User {
+  id: number
+  name: string
+  role: 'admin' | 'user'
+  active: boolean
+}</code></pre>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mb-6">
+              <div class="p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 text-center">
+                <p class="text-2xl font-bold text-emerald-400" id="active-count">0</p>
+                <p class="text-xs text-slate-500 mt-1">Active Users</p>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 text-center">
+                <p class="text-2xl font-bold text-blue-400" id="total-count">0</p>
+                <p class="text-xs text-slate-500 mt-1">Total Users</p>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 text-center">
+                <p class="text-2xl font-bold text-amber-400" id="admin-count">0</p>
+                <p class="text-xs text-slate-500 mt-1">Admins</p>
+              </div>
+            </div>
+            
+            <!-- User List -->
+            <div class="space-y-3" id="user-list">
+              <!-- Users will be rendered here -->
+            </div>
+            
+            <!-- Add User Button -->
+            <button id="add-user" class="mt-6 w-full py-3 rounded-xl bg-blue-500 font-semibold hover:bg-blue-600 transition-colors active:scale-[0.98]">
+              Add Random User
+            </button>
+
+            <!-- Remove User Button -->
+            <button id="remove-user" class="mt-6 w-full py-3 rounded-xl bg-blue-800 fony-semibold hover:bg-blue-900 transition-color active:scale-[0.98]">
+              Remove Last User
+            </button>
+          </div>
+        </div>
+        
+        <!-- Footer -->
+        <p class="text-center text-slate-600 text-xs mt-6">
+          Original by playcode.io
+        </p>
+      </div>
+    </div>
+    
+    <script src="src/script.ts"></script>
+  </body>
 </html>
